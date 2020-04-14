@@ -1,0 +1,11 @@
+ucloud:
+  project_id: org-aaaaa
+  public_key: Y0Raaaaaaa-qaaaaaaaaaaaaaaaaaaaa
+  private_key: Oyaaaaaaaaaaaaaaaaaknaaa_zaaaaaaaaaaaaaaaaaaaaaat_Jiaa
+
+cloudflare:
+  token: Obaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+  zone: example.com
+  record: github.example.com
+
+instances:
