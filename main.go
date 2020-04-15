@@ -13,7 +13,7 @@ func main() {
 	initUcloud()
 	for {
 		process()
-		time.Sleep(time.Hour)
+		time.Sleep(time.Hour * 24)
 	}
 }
 
