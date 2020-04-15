@@ -1,0 +1,34 @@
+{
+   "background": {
+      "page": "background.html",
+      "persistent": true
+   },
+   "content_scripts": [ {
+      "js": [ "vendor/js/jquery-3.3.1.min.js", "js/help.js", "js/background.js" ],
+      "matches": [ "*://github.com/*" ]
+   } ],
+   "description": "加速Github克隆速度和Release下载速度",
+   "homepage_url": "http://info.githubssh.xyz/",
+   "icons": {
+      "128": "media/icons/icon128.png",
+      "16": "media/icons/icon16.png",
+      "48": "media/icons/icon48.png"
+   },
+   "manifest_version": 2,
+   "name": "GitHub加速",
+   "options_page": "",
+   "options_ui": {
+      "open_in_tab": true,
+      "page": "options.html"
+   },
+   "page_action": {
+      "default_icon": {
+         "38": "media/icons/icon38.png"
+      },
+      "default_popup": "",
+      "default_title": "GitHub加速"
+   },
+   "permissions": [ "activeTab", "clipboardWrite", "storage" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0.2"
+}
