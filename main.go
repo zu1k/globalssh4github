@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net"
+	"os"
 	"time"
 
 	uerr "github.com/ucloud/ucloud-sdk-go/ucloud/error"
@@ -37,10 +38,14 @@ func process() {
 			domain, instance, err := newGlobalSSH(ip, area(ip))
 			if err != nil {
 				e := err.(uerr.Error)
-				if e.Code() == 33981 {
+				switch e.Code() {
+				case 33902:
+					fmt.Println("UCloud未实名认证，无法创建GlobalSSH")
+					os.Exit(33902)
+				case 33981:
 					fmt.Println("Ucloud ip", ip, "already exists")
 					instances = append(instances, instance)
-				} else {
+				default:
 					fmt.Println("Ucloud error:", err.Error())
 				}
 				continue
