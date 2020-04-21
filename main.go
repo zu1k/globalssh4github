@@ -43,7 +43,8 @@ func process() {
 					fmt.Println("UCloud未实名认证，无法创建GlobalSSH")
 					os.Exit(33902)
 				case 33981:
-					fmt.Println("Ucloud ip", ip, "already exists")
+					fmt.Println("Ucloud GlobalSSH with ip", ip, "already exists")
+					DomainsNew = append(DomainsNew, fmt.Sprintf("%s.ipssh.net", ip))
 					instances = append(instances, instance)
 				default:
 					fmt.Println("Ucloud error:", err.Error())
